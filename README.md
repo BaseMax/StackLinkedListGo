@@ -16,6 +16,8 @@ This is a simple implementation of a stack using a linked-list in Go.
 - `func (stack *StackLinkedList) PopDown() interface{}`: Pop the top element from the stack (from the down)
 - `func (stack *StackLinkedList) Peek() interface{}`: Get the top element from the stack (from the top)
 - `func (stack *StackLinkedList) PeekDown() interface{}`: Get the top element from the stack (from the down)
+- `func (stack *StackLinkedList) PeekNode() *Node`: Get the node from the stack (from the top)
+- `func (stack *StackLinkedList) PeekDownNode() *Node`: Get the node from the stack (from the down)
 - `func (stack *StackLinkedList) Size() int`: Get the size of the stack
 - `func (stack *StackLinkedList) IsEmpty() bool`: Check if the stack is empty
 - `func (stack *StackLinkedList) Clear()`: Clear the stack
