@@ -20,6 +20,18 @@ func main() {
 	// Print the stack
 	stack.Print()
 
+	// Reverse the stack
+	stack.Reverse()
+
+	// Print the stack
+	stack.Print()
+
+	// Reverse the stack (recursive)
+	stack.ReverseRecursive(stack.PeekNode())
+
+	// Print the stack
+	stack.Print()
+
 	// Get the top element
 	fmt.Println(stack.Peek())
 

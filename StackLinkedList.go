@@ -21,6 +21,14 @@ func NewStackLinkedList() *StackLinkedList {
 }
 
 /**
+ * @summary: Check if the stack is empty
+ * @return: True if the stack is empty, false otherwise
+ */
+func (stack *StackLinkedList) IsEmpty() bool {
+	return stack.size == 0
+}
+
+/**
  * @summary: Push a new element to the stack (to the top)
  * @param: data - The data to be pushed
  */
@@ -34,7 +42,7 @@ func (stack *StackLinkedList) Push(data interface{}) {
  * @param: data - The data to be pushed
  */
 func (stack *StackLinkedList) PushDown(data interface{}) {
-	if stack.size == 0 {
+	if stack.IsEmpty() {
 		stack.top = &Node{data, nil}
 	} else {
 		node := stack.top
@@ -51,7 +59,7 @@ func (stack *StackLinkedList) PushDown(data interface{}) {
  * @return: The top element
  */
 func (stack *StackLinkedList) Pop() interface{} {
-	if stack.size == 0 {
+	if stack.IsEmpty() {
 		return nil
 	}
 
@@ -66,7 +74,7 @@ func (stack *StackLinkedList) Pop() interface{} {
  * @return: The top element
  */
 func (stack *StackLinkedList) PopDown() interface{} {
-	if stack.size == 0 {
+	if stack.IsEmpty() {
 		return nil
 	}
 
@@ -91,7 +99,7 @@ func (stack *StackLinkedList) PopDown() interface{} {
  * @return: The top element
  */
 func (stack *StackLinkedList) Peek() interface{} {
-	if stack.size == 0 {
+	if stack.IsEmpty() {
 		return nil
 	}
 
@@ -99,11 +107,39 @@ func (stack *StackLinkedList) Peek() interface{} {
 }
 
 /**
+ * @summary: Get the node from the stack (from the top)
+ * @return: The top node
+ */
+func (stack *StackLinkedList) PeekNode() *Node {
+	if stack.IsEmpty() {
+		return nil
+	}
+
+	return stack.top
+}
+
+/**
+ * @summary: Get the node from the stack (from the down)
+ * @return: The down node
+ */
+func (stack *StackLinkedList) PeekDownNode() *Node {
+	if stack.IsEmpty() {
+		return nil
+	}
+
+	node := stack.top
+	for node.next != nil {
+		node = node.next
+	}
+	return node
+}
+
+/**
  * @summary: Get the top element from the stack (from the down)
  * @return: The top element
  */
 func (stack *StackLinkedList) PeekDown() interface{} {
-	if stack.size == 0 {
+	if stack.IsEmpty() {
 		return nil
 	}
 
@@ -123,14 +159,6 @@ func (stack *StackLinkedList) Size() int {
 }
 
 /**
- * @summary: Check if the stack is empty
- * @return: True if the stack is empty, false otherwise
- */
-func (stack *StackLinkedList) IsEmpty() bool {
-	return stack.size == 0
-}
-
-/**
  * @summary: Clear the stack
  */
 func (stack *StackLinkedList) Clear() {
@@ -142,7 +170,7 @@ func (stack *StackLinkedList) Clear() {
  * @summary: Reverse the stack
  */
 func (stack *StackLinkedList) Reverse() {
-	if stack.size == 0 {
+	if stack.IsEmpty() {
 		return
 	}
 

@@ -20,6 +20,8 @@ This is a simple implementation of a stack using a linked-list in Go.
 - `func (stack *StackLinkedList) IsEmpty() bool`: Check if the stack is empty
 - `func (stack *StackLinkedList) Clear()`: Clear the stack
 - `func (stack *StackLinkedList) Print()`: Print the stack
+- `func (stack *StackLinkedList) Reverse()`: Reverse the stack
+- `func (stack *StackLinkedList) ReverseRecursive(Node *Node) *Node`: Reverse the stack recursively
 
 **Types:**
 
