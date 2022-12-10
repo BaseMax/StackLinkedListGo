@@ -139,6 +139,40 @@ func (stack *StackLinkedList) Clear() {
 }
 
 /**
+ * @summary: Reverse the stack
+ */
+func (stack *StackLinkedList) Reverse() {
+	if stack.size == 0 {
+		return
+	}
+
+	var prev *Node
+	node := stack.top
+	for node != nil {
+		next := node.next
+		node.next = prev
+		prev = node
+		node = next
+	}
+	stack.top = prev
+}
+
+/**
+ * @summary: Reverse the stack recursively
+ */
+func (stack *StackLinkedList) ReverseRecursive(Node *Node) *Node {
+	if Node == nil || Node.next == nil {
+		return Node
+	}
+
+	next := Node.next
+	Node.next = nil
+	newHead := stack.ReverseRecursive(next)
+	next.next = Node
+	return newHead
+}
+
+/**
  * @summary: Print the stack
  */
 func (stack *StackLinkedList) Print() {

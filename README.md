@@ -4,7 +4,6 @@ This is a simple implementation of a stack using a linked-list in Go.
 
 ## Functions
 
-
 **Public functions:**
 
 - `func NewStackLinkedList() *StackLinkedList`: Create a new stack
